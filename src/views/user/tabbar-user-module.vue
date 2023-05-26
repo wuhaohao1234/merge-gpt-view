@@ -2,7 +2,7 @@
   <div class="user_module">
     <van-cell-group>
 <!--      <van-cell icon="shoucang" title="我的收藏" to="/user/collect" isLink/>-->
-      <van-cell icon="kefu" title="联系客服"  @click="showKefu = true" />
+      <!-- <van-cell icon="kefu" title="联系客服"  @click="showKefu = true" /> -->
       <van-cell icon="kefu" title="意见反馈" to="/user/feedback" isLink/>
       <van-cell icon="team" title="关于我们" to="/user/aboutUs" isLink/>
       <van-cell icon="team" title="邀请好友" to="/share" isLink/>
