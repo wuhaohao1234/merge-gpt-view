@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Serif Pro", "Noto Serif SC", -apple-system, "SF UI Text", "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  text-decoration: none;
+}
+html,
+body,
+#dialog-com {
+  height: 100%;
+  background-color: var(--background-color-2);
+}
+#chatgpt #sidebar #chats .btn,
+#chatgpt #sidebar #chats .list > div,
+#chatgpt #sidebar #chats .list > div span,
+a {
+  transition: all 0.1s ease-in-out;
+}
+#dialog,
+#chatgpt #sidebar,
+#chatgpt,
+#chatgpt #main #input .stop {
+  transition: all 0.3s ease-in-out;
+}

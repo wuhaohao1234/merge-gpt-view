@@ -1,0 +1,56 @@
+#messageBox {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    .success {
+        --color: #27ae60;
+        --bgColor: #c4ffc4;
+    }
+
+    .warning {
+        --color: #f39c12;
+        --bgColor: #fff8e1;
+    }
+
+    .danger {
+        --color: #c0392b;
+        --bgColor: #fde3e3;
+    }
+
+    .info {
+        --color: #2980b9;
+        --bgColor: #d6eaf8;
+    }
+
+    > div {
+        padding: 5px 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+        transform: translateY(-200%);
+        animation: show 3s ease-in-out forwards;
+        color: var(--color);
+        background-color: var(--bgColor);
+        border: 1px solid var(--color);
+    }
+
+    @keyframes show {
+        0% {
+            transform: translateY(-200%);
+        }
+
+        10% {
+            transform: translateY(0);
+        }
+
+        90% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-200%);
+        }
+    }
+}

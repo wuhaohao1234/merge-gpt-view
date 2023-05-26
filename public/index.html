@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta name="keywords" content="ChatGPT,人工智能,自然语言处理,互联网,聊天机器人">
+  <meta name="description" content="机器星球计划是一个领先的自然语言处理技术公司，在人工智能和互联网领域拥有行业领先的解决方案。我们的ChatGPT技术可以模仿真实人类对话风格，广泛应用于客服、医疗保健、金融、教育和其他领域。了解更多有关机器星球计划和ChatGPT技术的信息，请访问我们的官方网站。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>/favicon.ico" type="image/x-icon" />
+  <title>机器星球计划</title>
+  <script src="<%= BASE_URL %>/js/index.js"></script>
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(135deg, #711bce 0, #fa0076 51%, #6d1bc6 100%);
+            z-index: 9999;
+        }
+        .loading-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto;
+/*            background: url('loading.gif') no-repeat;*/
+            animation: loading 1s linear infinite;
+        }
+        .loading-text {
+            text-align: center;
+            margin-top: 10rem;
+        }
+        @keyframes loading {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>Please enable it to continue.</strong>
+  </noscript>
+  <div class="loading" id="loading">
+      <div class="loading-icon"></div>
+      <div class="loading-text" style="font-size: 24px">正在穿梭时光隧道，请稍等...</div>
+  </div>
+  <div id="app">
+    <div class="lds-ball">
+      <div></div>
+    </div>
+  </div>
+  <!-- built files will be auto injected -->
+</body>
+<script>
+
+    if (document.readyState === 'complete') {
+         document.getElementById("loading").style.display = "none";
+    } else {
+        // 页面未加载完成
+        window.addEventListener('load', function() {
+         document.getElementById("loading").style.display = "none";
+        });
+    }
+
+</script>
+
+</html>

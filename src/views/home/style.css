@@ -1,0 +1,376 @@
+.space {
+  height: 1px;
+  background-color: black;
+}
+#chatgpt {
+  height: 100%;
+  display: flex;
+  background-color: var(--background-color-1);
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+#chatgpt > div {
+  width: 100%;
+}
+#chatgpt #sidebar {
+  min-width: 300px;
+  width: 300px;
+  height: 100%;
+  background-image: linear-gradient(135deg, #711bce 0, #fa0076 51%, #6d1bc6 100%);
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 10px 10px 0;
+}
+#chatgpt #sidebar .btns {
+  padding: 10px 10px 0;
+}
+#chatgpt #sidebar .btn {
+  border: 1px solid #ffffff33;
+  padding: 10px 0 10px 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+#chatgpt #sidebar .btn:hover {
+  background-color: #585858;
+}
+#chatgpt #sidebar #chats {
+  overflow-y: scroll;
+  height: 100%;
+}
+#chatgpt #sidebar #chats::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+#chatgpt #sidebar #chats::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #444653;
+}
+#chatgpt #sidebar #chats::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+#chatgpt #sidebar #chats > div {
+  padding: 10px 0 10px 30px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+  border-radius: 5px;
+}
+#chatgpt #sidebar #chats > div p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  width: 70%;
+}
+#chatgpt #sidebar #chats > div span {
+  font-size: 0.8rem;
+  color: gray;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(10px, -50%);
+  cursor: pointer;
+}
+#chatgpt #sidebar #chats > div span:hover {
+  color: red;
+}
+#chatgpt #sidebar #chats > div:hover {
+  background-color: #2b2c2f;
+}
+#chatgpt #sidebar #chats > div:hover span {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%);
+}
+#chatgpt #sidebar #chats .active {
+  background-color: #2b2c2f;
+}
+#chatgpt #sidebar #showBtn {
+  background-image: linear-gradient(135deg, #6d1bc6 0, #fa0076 51%, #6d1bc6 100%);
+  opacity: 0.8;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  top: 10%;
+  right: 0;
+  transform: translateX(100%);
+  padding: 5px 5px;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  z-index: 1;
+  user-select: none;
+  visibility: hidden;
+}
+#chatgpt #sidebar #bottom {
+  border-top: 1px solid #ffffff33;
+  width: 100%;
+  padding: 10px 10px 0;
+  box-sizing: border-box;
+}
+#chatgpt #sidebar #bottom .btn {
+  border: none;
+}
+#chatgpt #sidebar #bottom .money {
+  padding: 10px 5px;
+}
+#chatgpt .sideBarShow {
+  transform: translateX(0) !important;
+}
+#chatgpt #main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color-1);
+}
+#chatgpt #main #input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  /*background-image: linear-gradient(
+         to bottom,
+         transparent,
+         var(--background-color-2) 40%
+     );*/
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+#chatgpt #main #input .textarea {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  transform: translateX(-50%);
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#chatgpt #main #input .textarea textarea {
+  width: 90%;
+  border-radius: 6px;
+  border: 1px solid var(--background-color-1);
+  background-color: #ffffff;
+  outline: none;
+  resize: none;
+  padding: 15px 20px;
+  color: var(--text-color);
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+#chatgpt #main #input .textarea textarea::-webkit-scrollbar {
+  width: 8px;
+  height: 1px;
+}
+#chatgpt #main #input .textarea textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: none;
+  background: #565868;
+}
+#chatgpt #main #input .textarea textarea::-webkit-scrollbar-track {
+  box-shadow: none;
+  border-radius: 10px;
+  background: transparent;
+}
+#chatgpt #main #input .textarea .btn {
+  background-color: #fa0076;
+  padding: 15px 15px;
+  border-radius: 6px;
+  white-space: nowrap;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+#chatgpt #main #input .textarea .btn:hover {
+  background-color: #fa0076;
+}
+#chatgpt #main #input p {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+#chatgpt #main #input .stop {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  z-index: 1;
+  padding: 5px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 10px);
+}
+#chatgpt #main #input .stopShow {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+#chatgpt #main #title {
+  padding: 20px 50px;
+  border-bottom: 1px solid var(--background-color-2);
+}
+#chatgpt #main #messages {
+  height: 100%;
+  overflow-y: auto;
+}
+#chatgpt #main #messages::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+#chatgpt #main #messages::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #444653;
+}
+#chatgpt #main #messages::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: var(--background-color-1);
+}
+#chatgpt #main #messages #stretch {
+  height: 15%;
+  border-bottom: none;
+}
+#chatgpt #main #messages > .right {
+  flex-direction: row-reverse;
+}
+#chatgpt #main #messages > .right > .content {
+  background-color: var(--message-bg);
+}
+#chatgpt #main #messages > .left > .content {
+  background-color: var(--message-bg2);
+}
+#chatgpt #main #messages > div {
+  padding: 25px 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+#chatgpt #main #messages > div .tokens {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  opacity: 0.4;
+}
+#chatgpt #main #messages > div .img {
+  border-radius: 5px;
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  user-select: none;
+  color: white;
+}
+#chatgpt #main #messages > div .img div {
+  height: 100%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+#chatgpt #main #messages > div .img .system {
+  background-color: #8b8b8b;
+}
+#chatgpt #main #messages > div .img .user {
+  background-color: #5d4eff;
+}
+#chatgpt #main #messages .content {
+  padding: 0 20px;
+  border-radius: 10px;
+  margin: 0.5rem 10px 10px 10px;
+}
+#chatgpt #main #messages :deep(.content) > :not(ol):not(ul):not(pre):last-child:after,
+#chatgpt #main #messages :deep(.content) > ol:last-child li:last-child:after,
+#chatgpt #main #messages :deep(.content) > pre:last-child code:after,
+#chatgpt #main #messages :deep(.content) > ul:last-child li:last-child:after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: var(--text-color);
+  animation: blink 1s steps(5, start) infinite;
+  transform: translateY(3px);
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+#chatgpt #main #messages :deep(.end) *::after {
+  display: none !important;
+}
+#chatgpt #main .print {
+  height: auto !important;
+  overflow-y: initial !important;
+}
+#chatgpt #main #home {
+  margin-top: 100px;
+  height: 110%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+#chatgpt #main #home > div {
+  transform: translateY(-150px);
+}
+#chatgpt #main #home > div > p {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+#chatgpt #main #home > div .content a {
+  color: #00aeff;
+}
+.print {
+  height: auto !important;
+  overflow-y: initial !important;
+}
+@media screen and (max-width: 1200px) {
+  #sidebar {
+    position: absolute !important;
+    transform: translateX(-100%);
+  }
+  #sidebar #showBtn {
+    visibility: visible !important;
+  }
+  #messages > div {
+    padding: 25px 50px !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  #messages > div {
+    padding: 25px 20px !important;
+  }
+  #chats .list > div span {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(0) !important;
+    color: red !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  #messages > div {
+    padding: 25px 10px !important;
+  }
+}
